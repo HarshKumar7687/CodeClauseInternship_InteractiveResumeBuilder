@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Interactive Resume Builder</h1>
+    <div class="builder">
+      <!-- Form Section -->
+      <div class="form-container">
+        <form id="resumeForm">
+          <!-- Step 1: Personal Information -->
+          <div class="form-step active" id="step-1">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input type="text" id="phone" placeholder="+123456789" required>
+            </div>
+            <div class="form-group">
+              <label for="profilePhoto">Upload Profile Photo:</label>
+              <input type="file" id="profilePhoto" accept="image/*">
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Education -->
+          <div class="form-step" id="step-2">
+            <h2>Education</h2>
+            <div class="form-group">
+              <label for="education">Education:</label>
+              <textarea id="education" placeholder="Degree, University, Year" required></textarea>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Work Experience -->
+          <div class="form-step" id="step-3">
+            <h2>Work Experience</h2>
+            <div class="form-group">
+              <label for="experience">Experience:</label>
+              <textarea id="experience" placeholder="Job Title, Company, Duration" required></textarea>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 4: Skills -->
+          <div class="form-step" id="step-4">
+            <h2>Skills</h2>
+            <div class="form-group">
+              <label for="skills">Skills:</label>
+              <textarea id="skills" placeholder="List your skills" required></textarea>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 5: Projects -->
+          <div class="form-step" id="step-5">
+            <h2>Projects</h2>
+            <div class="form-group">
+              <label for="projects">Projects:</label>
+              <textarea id="projects" placeholder="Project Name, Description" required></textarea>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 6: Certifications -->
+          <div class="form-step" id="step-6">
+            <h2>Certifications</h2>
+            <div class="form-group">
+              <label for="certifications">Certifications:</label>
+              <textarea id="certifications" placeholder="Certification Name, Year" required></textarea>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          
+          <!-- Step 7: Choose Template -->
+          <div class="form-step" id="step-7">
+            <h2>Choose Template</h2>
+            <div class="form-group">
+              <label for="template">Template:</label>
+              <select id="template">
+                <option value="classic">Classic</option>
+                <option value="modern">Modern</option>
+                <option value="artistic">Artistic</option>
+              </select>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" onclick="generateResume()">Generate Resume</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="preview-container">
+        <h2>Resume Preview</h2>
+        <div id="resumePreview" class="resume-template classic">
+        </div>
+        <button id="downloadBtn" style="display:none;" onclick="downloadResume()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
